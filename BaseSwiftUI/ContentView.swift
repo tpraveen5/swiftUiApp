@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let items = ["Item 1", "Item 2", "Item 3", "Item 4"]
+    let items = ["Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development to fill empty spaces in a layout that do not yet have content", "Item 2", "Item 3", "Item 4"]
     var body: some View {
         ZStack {
             Image("test34")
@@ -46,10 +46,9 @@ struct ContentView: View {
                             .listRowInsets(EdgeInsets())
                     }
                 }
-                .background(Color.clear) // Remove list background
-                .listStyle(InsetGroupedListStyle()) // InsetGrouped style sometimes hides separators better
-                .scrollContentBackground(.hidden) // Hide default background (iOS 16+)
-                
+                .background(Color.clear)
+                .listRowSpacing(30)
+                .scrollContentBackground(.hidden)
                 Spacer()
             }
 
