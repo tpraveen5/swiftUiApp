@@ -10,25 +10,23 @@ import SwiftUI
 struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
-     //   NavigationView {
         VStack {
             
-            HStack {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("< Back")
-                    //.padding()
-                    //                        .background(Color.blue)
-                        .foregroundColor(.black)
-                        .cornerRadius(8)
-                }
-                // .padding()
-                Spacer()
-            }
-            .padding(.leading, 10)
-            Spacer()
-            
+//            HStack {
+//                Button(action: {
+//                    presentationMode.wrappedValue.dismiss()
+//                }) {
+//                    Text("< Back")
+//                    //.padding()
+//                    //                        .background(Color.blue)
+//                        .foregroundColor(.black)
+//                        .cornerRadius(8)
+//                }
+//                // .padding()
+//                Spacer()
+//            }
+//            .padding(.leading, 10)
+//            Spacer()
             
             Text("Subscribe for the revolution!!")
                 .frame(height: 50)
@@ -52,13 +50,14 @@ struct DetailView: View {
                     Text("Test 6")
                     Spacer()
                     Text("Test 8")
-                    //                    RoundedRectangle(
-                    //                        cornerRadius: 8
-                    //                    )
-                    //                    .clipShape(Circle())
+                    RoundedRectangle(
+                        cornerRadius: 8
+                    )
+                    .clipShape(Circle())
                 }
             }
-               // .frame(height: 50)
+                .frame(height: 50)
+                .lineLimit(2)
                 .padding(10)
                 .background(
                     RoundedRectangle(cornerRadius: 10) // Rounded rectangle with corner radius
@@ -69,13 +68,25 @@ struct DetailView: View {
                 Spacer()
                 
                 Text("Subscribe for the revolution!!")
-                Button("Subscribe for the revolution!!") {
-                    print("Sttaus")
-                }
+            
+                
+            NavigationLink(destination: NewAnimatedView()) {
+                Text("Subscribe for the revolution!!")
+                    .foregroundColor(.blue) // Customize the text appearance if needed
+            }
+
+//            Button(action: {
+//                print("Button tapped!") // Perform some action first
+//            }) {
+//                NavigationLink(destination: NewAnimatedView()) {
+//                    Text("Subscribe for the revolution!!")
+//                }
+//            }
+
             }
             .padding()
-            .navigationBarHidden(true)
-      //  }
+            .navigationBarBackButtonHidden(false)
+        
     }
 }
 
